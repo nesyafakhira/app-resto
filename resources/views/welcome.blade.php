@@ -8,15 +8,16 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="HandheldFriendly" content="True" />
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="shortcut icon" href="img/favicon.png" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/materialize.min.css" />
-    <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="css/slick-theme.css" />
-    <link rel="stylesheet" href="css/owl.carousel.css" />
-    <link rel="stylesheet" href="css/owl.theme.css" />
-    <link rel="stylesheet" href="css/owl.transitions.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/materialize.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/slick.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/slick-theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/owl.carousel.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/owl.theme.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/owl.transitions.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/template/Delicious/assets/css/style.css') }}" />
 </head>
 
 <body>
@@ -168,11 +169,12 @@
     <!-- end footer -->
 
     <!-- script -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/materialize.min.js') }}"></script>
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 
 </html>
