@@ -121,7 +121,7 @@
             <h2>At vero eos et accusamus</h2>
             <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
             <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
+              {{-- <a href="#menu" class="btn-get-started">Our Menu</a> --}}
               <a href="#book-a-table" class="btn-get-started">Book a table</a>
             </div>
           </div>

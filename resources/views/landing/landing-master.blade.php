@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Delicious Bootstrap Template</title>
+  <title>App Resto</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -23,18 +23,7 @@
   <link href="{{ asset('/template/Delicious/assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('/template/Delicious/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('/template/Delicious/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="{{ asset('/template/Delicious/assets/css/main.css') }}" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Delicious
-  * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
 
 <body class="index-page">
 
@@ -53,8 +42,8 @@
             <h2><span>Delicious</span> Restaurant</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+              {{-- <a href="#menu" class="btn-get-started">Our Menu</a> --}}
+              <a href="#book-a-table" class="btn-get-started">Order Now</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -65,8 +54,8 @@
             <h2>At vero eos et accusamus</h2>
             <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
             <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+              {{-- <a href="#menu" class="btn-get-started">Our Menu</a> --}}
+              <a href="#book-a-table" class="btn-get-started">Order Now</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -77,8 +66,8 @@
             <h2>Temporibus autem quibusdam</h2>
             <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
             <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+              {{-- <a href="#menu" class="btn-get-started">Our Menu</a> --}}
+              <a href="#book-a-table" class="btn-get-started">Order Now</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -96,6 +85,106 @@
       </div>
 
     </section><!-- /Hero Section -->
+
+    <!-- Book A Table Section -->
+    <section id="book-a-table" class="book-a-table section">
+
+      {{-- <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Book A Table</h2>
+        <div><span>Book a</span> <span class="description-title">Table</span></div>
+      </div> --}}
+
+        <div class="container py-5">
+            <h1 class="mb-4 text-center">Pilih Meja Restoran</h1>
+            <div class="row g-4">
+
+            <!-- Meja 1 -->
+            <div class="col-md-4">
+            <div class="card table-card border-success">
+                <div class="card-body">
+                <h5 class="card-title">Meja #1</h5>
+                <p class="card-text text-success">Status: Kosong</p>
+                <button class="btn btn-primary w-100 select-table" data-table="1">Pilih Meja</button>
+                </div>
+            </div>
+            </div>
+
+            <!-- Meja 2 -->
+                <div class="col-md-4">
+                <div class="card table-card border-danger">
+                    <div class="card-body">
+                    <h5 class="card-title">Meja #2</h5>
+                    <p class="card-text text-danger">Status: Penuh</p>
+                    <button class="btn btn-secondary w-100" disabled>Sudah Penuh</button>
+                    </div>
+                </div>
+                </div>
+
+            <!-- Meja 3 -->
+            <div class="col-md-4">
+            <div class="card table-card border-success">
+                <div class="card-body">
+                <h5 class="card-title">Meja #3</h5>
+                <p class="card-text text-success">Status: Kosong</p>
+                <button class="btn btn-primary w-100 select-table" data-table="3">Pilih Meja</button>
+                </div>
+            </div>
+            </div>
+
+                <!-- Tambahkan meja lainnya sesuai kebutuhan -->
+            </div>
+        </div>
+
+      <!-- End Section Title -->
+
+      {{-- <div class="container">
+
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 reservation-img" style="background-image: url({{ asset('/template/Delicious/assets/img/reservation.jpg')  }});"></div>
+
+          <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+            <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+              <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <input type="number" class="form-control" name="people" id="people" placeholder="# of people" required="">
+                </div>
+              </div>
+
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+              </div>
+
+              <div class="text-center mt-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+                <button type="submit">Book a Table</button>
+              </div>
+            </form>
+          </div><!-- End Reservation Form -->
+
+        </div>
+
+      </div> --}}
+
+    </section><!-- /Book A Table Section -->
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us section">
@@ -140,75 +229,6 @@
 
     </section><!-- /Why Us Section -->
 
-    <section>
-
-    </section>
-
-
-
-
-
-
-
-    <!-- Book A Table Section -->
-    <section id="book-a-table" class="book-a-table section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Book A Table</h2>
-        <div><span>Book a</span> <span class="description-title">Table</span></div>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 reservation-img" style="background-image: url({{ asset('/template/Delicious/assets/img/reservation.jpg')  }});"></div>
-
-          <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
-            <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="number" class="form-control" name="people" id="people" placeholder="# of people" required="">
-                </div>
-              </div>
-
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-              </div>
-
-              <div class="text-center mt-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
-                <button type="submit">Book a Table</button>
-              </div>
-            </form>
-          </div><!-- End Reservation Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Book A Table Section -->
-
-
-
 
     <!-- Menu Section -->
     <section id="menu" class="menu section">
@@ -216,6 +236,12 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Menu</h2>
+        <div class="text-end">
+        <button class="btn btn-sm btn-primary" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+            🛒 View Cart
+        </button>
+        </div>
+
         <div><span>Check Our Tasty</span> <span class="description-title">Menu</span></div>
       </div><!-- End Section Title -->
 
@@ -235,92 +261,119 @@
         <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
 
           <div class="col-lg-6 menu-item isotope-item filter-starters">
-            <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/lobster-bisque.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Lobster Bisque</a><span>$5.95</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-specialty">
-            <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/bread-barrel.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Bread Barrel</a><span>$6.95</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-starters">
-            <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/cake.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Crab Cake</a><span>$7.95</span>
             </div>
             <div class="menu-ingredients">
               A delicate crab cake served on a toasted roll with lettuce and tartar sauce
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-salads">
-            <img src="assets/img/menu/caesar.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/caesar.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Caesar Selections</a><span>$8.95</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-specialty">
-            <img src="assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/tuscan-grilled.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Tuscan Grilled</a><span>$9.95</span>
             </div>
             <div class="menu-ingredients">
               Grilled chicken with provolone, artichoke hearts, and roasted red pesto
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-starters">
-            <img src="assets/img/menu/mozzarella.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/mozzarella.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Mozzarella Stick</a><span>$4.95</span>
             </div>
             <div class="menu-ingredients">
               Lorem, deren, trataro, filede, nerada
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-salads">
-            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/greek-salad.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Greek Salad</a><span>$9.95</span>
             </div>
             <div class="menu-ingredients">
               Fresh spinach, crisp romaine, tomatoes, and Greek olives
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-salads">
-            <img src="assets/img/menu/spinach-salad.jpg" class="menu-img" alt="">
+            <img src="{{ asset('/template/Delicious/assets/img/menu/spinach-salad.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Spinach Salad</a><span>$9.95</span>
             </div>
             <div class="menu-ingredients">
               Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
             </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
+            </div>
           </div><!-- Menu Item -->
 
           <div class="col-lg-6 menu-item isotope-item filter-specialty">
-            <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
+            <img src="{{  asset('/template/Delicious/assets/img/menu/lobster-roll.jpg') }}" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Lobster Roll</a><span>$12.95</span>
             </div>
             <div class="menu-ingredients">
               Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+            </div>
+            <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary add-to-cart">+ Add to Cart</button>
             </div>
           </div><!-- Menu Item -->
 
@@ -328,10 +381,92 @@
 
       </div>
 
-    </section><!-- /Menu Section -->
+    </section>
+    <!-- /Menu Section -->
+
+    <!-- Cart Sidebar -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+    <div class="offcanvas-header">
+        <h5 id="cartSidebarLabel">🛒 Your Cart</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul id="cart-items" class="list-group mb-3"></ul>
+        <div class="d-flex justify-content-between">
+        <strong>Total:</strong>
+        <strong id="cart-total">$0.00</strong>
+        </div>
+        <div class="mt-3 text-end">
+        <button class="btn btn-sm btn-outline-danger" id="clear-cart">Clear Cart</button>
+        <div class="mt-2 text-end">
+        <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#paymentModal">Proceed to Payment</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="paymentModalLabel">🧾 Payment Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <form id="payment-form">
+            <div class="mb-3">
+                <label for="customerName" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="customerName" required>
+            </div>
+            <div class="mb-3">
+                <label for="tableNumber" class="form-label">Table Number</label>
+                <input type="number" class="form-control" id="tableNumber" required>
+            </div>
+
+            <h6>Order Summary</h6>
+            <ul class="list-group mb-3" id="payment-summary"></ul>
+            <div class="d-flex justify-content-between mb-3">
+                <strong>Total:</strong>
+                <strong id="payment-total">$0.00</strong>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Payment Method</label>
+                <select class="form-select" id="payment-method" required>
+                <option value="">-- Select Payment Method --</option>
+                <option value="qris">QRIS</option>
+                <option value="cash">Cash</option>
+                </select>
+            </div>
+
+            <div id="payment-instruction" class="text-center mt-3"></div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" form="payment-form" class="btn btn-success">Done</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+        <div class="modal-header">
+            <h5 class="modal-title w-100" id="paymentSuccessModalLabel">✅ Payment Successful</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <p>Thank you! Your order has been received.</p>
+        </div>
+        </div>
+    </div>
+    </div>
 
 
-    <!-- Contact Section -->
+    {{-- <!-- Contact Section -->
     <section id="contact" class="contact section">
 
       <!-- Section Title -->
@@ -411,7 +546,7 @@
 
       </div>
 
-    </section><!-- /Contact Section -->
+    </section><!-- /Contact Section --> --}}
 
   </main>
 
@@ -492,6 +627,119 @@
   <script src="{{ asset('/template/Delicious/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
   <script src="{{ asset('/template/Delicious/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src="{{ asset('/template/Delicious/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <script>
+        const paymentSummaryEl = document.getElementById('payment-summary');
+        const paymentTotalEl = document.getElementById('payment-total');
+        const paymentMethodSelect = document.getElementById('payment-method');
+        const paymentInstruction = document.getElementById('payment-instruction');
+
+        // Fill payment modal with cart data
+        document.getElementById('paymentModal').addEventListener('show.bs.modal', () => {
+            paymentSummaryEl.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `${item.name} <span>$${item.price.toFixed(2)}</span>`;
+            paymentSummaryEl.appendChild(li);
+            total += item.price;
+            });
+            paymentTotalEl.textContent = `$${total.toFixed(2)}`;
+            paymentInstruction.innerHTML = '';
+            paymentMethodSelect.value = '';
+        });
+
+        // Show QR code or cash instruction
+        paymentMethodSelect.addEventListener('change', () => {
+            const method = paymentMethodSelect.value;
+            if (method === 'qris') {
+            paymentInstruction.innerHTML = `
+                <p>Scan the QR code below to complete your payment:</p>
+                <img src="https://via.placeholder.com/200x200.png?text=QR+Code" alt="QR Code" class="img-fluid">
+            `;
+            } else if (method === 'cash') {
+            paymentInstruction.innerHTML = `<p>Please proceed to the cashier to complete your payment.</p>`;
+            } else {
+            paymentInstruction.innerHTML = '';
+            }
+        });
+
+        // Handle payment done
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('customerName').value.trim();
+        const table = document.getElementById('tableNumber').value.trim();
+        const method = paymentMethodSelect.value;
+
+        if (!name || !table || !method) return alert("Please fill in all fields.");
+
+        const modalEl = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
+        modalEl.hide();
+
+        new bootstrap.Modal(document.getElementById('paymentSuccessModal')).show();
+        cart = [];
+        renderCart();
+        });
+    </script>
+
+    <script>
+        const cartItemsEl = document.getElementById('cart-items');
+        const cartTotalEl = document.getElementById('cart-total');
+        const clearCartBtn = document.getElementById('clear-cart');
+        let cart = [];
+        document.querySelectorAll('.add-to-cart').forEach((btn) => {
+            btn.addEventListener('click', function () {
+            const menuItem = btn.closest('.menu-item');
+            const name = menuItem.querySelector('.menu-content a').innerText;
+            const priceText = menuItem.querySelector('.menu-content span').innerText;
+            const price = parseFloat(priceText.replace('$', ''));
+
+            cart.push({ name, price });
+            renderCart();
+
+            // Optional: open cart automatically
+            const cartSidebar = new bootstrap.Offcanvas(document.getElementById('cartSidebar'));
+            cartSidebar.show();
+            });
+        });
+        function renderCart() {
+            cartItemsEl.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `
+                ${item.name} <span>$${item.price.toFixed(2)}</span>
+            `;
+            cartItemsEl.appendChild(li);
+            total += item.price;
+            });
+            cartTotalEl.innerText = `$${total.toFixed(2)}`;
+        }
+        clearCartBtn.addEventListener('click', () => {
+            cart = [];
+            renderCart();
+        });
+    </script>
+
+    <script>
+        // Event for choosing table and auto-filling the payment modal
+        document.querySelectorAll('.select-table').forEach(button => {
+            button.addEventListener('click', function () {
+            const tableNumber = this.getAttribute('data-table');
+            const tableInput = document.getElementById('tableNumber');
+
+            // Set value and open modal
+            tableInput.value = tableNumber;
+
+            // Open payment modal
+            const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            paymentModal.show();
+            });
+        });
+        </script>
+
 
   <!-- Main JS File -->
   <script src="{{ asset('/template/Delicious/assets/js/main.js') }}"></script>
