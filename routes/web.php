@@ -5,6 +5,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('meja', TableController::class);
+
+Route::get('/menu/table/{table}', [MenuController::class, 'createWithTable'])->name('menu.create.with.table');
 Route::resource('menu', MenuController::class);
+
+Route::put('/order/{order}/paid', [OrderController::class, 'markAsPaid'])->name('order.markPaid');
 Route::resource('order', OrderController::class);
+
+Route::post('/order-item/{table}', [OrderItemController::class, 'store'])->name('order-item.store');
 Route::resource('order-item', OrderItemController::class);
+
 
 require __DIR__.'/auth.php';

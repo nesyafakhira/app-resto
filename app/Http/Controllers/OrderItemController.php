@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\Order;
+use App\Models\Table;
+use App\Models\orderItem;
 use Illuminate\Http\Request;
 
 class OrderItemController extends Controller
@@ -25,10 +29,41 @@ class OrderItemController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, Table $table)
+{
+    // Langsung gunakan $table
+    $order = Order::create([
+        'table_id' => $table->id,
+        'order_name' => $request->order_name,
+        'total_amount' => 0, // dihitung nanti
+        'payment_method' => 'qris',
+        'status' => 'pending',
+        'paid_amount' => 0,
+    ]);
+
+    $total = 0;
+
+    foreach ($request->quantities as $menuId => $qty) {
+        if ($qty > 0) {
+            $menu = Menu::findOrFail($menuId);
+            $subtotal = $menu->price * $qty;
+            $total += $subtotal;
+
+            orderItem::create([
+                'order_id' => $order->id,
+                'menu_id' => $menu->id,
+                'quantity' => $qty,
+            ]);
+        }
     }
+
+    // Update total dan status meja
+    $order->update(['total_amount' => $total]);
+    $table->update(['is_full' => 1]);
+
+    return redirect()->route('order.show', $order->id)->with('success', 'Pesanan berhasil dibuat');
+}
+
 
     /**
      * Display the specified resource.

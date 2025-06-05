@@ -10,14 +10,18 @@ class orderItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['order_id', 'menu_item_id', 'quantity'];
+    protected $fillable = [
+        'order_id', 
+        'menu_id', 
+        'quantity'
+    ];
 
     public function order()
     {
         return $this->belongsTo(Order::class);
     }
 
-    public function menuItem()
+    public function menu()
     {
         return $this->belongsTo(Menu::class);
     }

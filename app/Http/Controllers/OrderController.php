@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function markAsPaid(Order $order)
+    {
+        // Update status
+        $order->update([
+            'status' => 'paid',
+            'paid_amount' => $order->total_amount,
+        ]);
+
+        return redirect()->route('order.show', $order->id)->with('success', 'Pesanan berhasil ditandai sebagai dibayar');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -33,9 +45,13 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Order $order)
     {
-        //
+        $order->load(['orderItems.menu', 'table']);
+
+        // dd($order);
+
+        return view('user.detail-pesanan', compact('order'));
     }
 
     /**

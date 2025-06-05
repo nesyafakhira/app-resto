@@ -2,61 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\Order;
+use App\Models\Table;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function index() {}
+
+    public function create($tableId)
     {
-        $orders = Order::with('user')->get(); // ambil order dan user-nya
-        return view('orders.index', compact('orders'));
+        $table = Table::findOrFail($tableId);
+        $menus = Menu::all();
+
+        return view('menu', compact('menus', 'table'));
     }
 
-    public function create()
-    {
-        return view('orders.create');
-    }
+    public function createWithTable(Table $table)
+{
+    $menus = Menu::all();
+    return view('user.menu', compact('table', 'menus'));
+}
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nama_order' => 'required|string',
-        ]);
+    public function store(Request $request) {}
 
-        Order::create([
-            'nama_order' => $request->nama_order,
-        ]);
+    public function show(Order $order) {}
 
-        return redirect()->route('orders.index')->with('success', 'Order dibuat!');
-    }
+    public function edit(Order $order) {}
 
-    public function show(Order $order)
-    {
-        return view('orders.show', compact('order'));
-    }
+    public function update(Request $request, Order $order) {}
 
-    public function edit(Order $order)
-    {
-        return view('orders.edit', compact('order'));
-    }
-
-    public function update(Request $request, Order $order)
-    {
-        $request->validate([
-            'nama_order' => 'required|string',
-        ]);
-
-        $order->update([
-            'nama_order' => $request->nama_order,
-        ]);
-
-        return redirect()->route('orders.index')->with('success', 'Order diperbarui!');
-    }
-
-    public function destroy(Order $order)
-    {
-        $order->delete();
-        return redirect()->route('orders.index')->with('success', 'Order dihapus!');
-    }
+    public function destroy(Order $order) {}
 }
