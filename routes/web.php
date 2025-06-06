@@ -3,9 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderItemController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\TableStatusController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\MenuManagementController;
+use App\Http\Controllers\StaffManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +26,29 @@ Route::get('/', function () {
     return view('landing.landing-master');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::get('/', function () {
+        return view('dashboard.index');
+    })->name('index');
+
+    // ADMIN - CRUD Menu & Staff
+    Route::middleware('role:admin')->group(function () {
+        Route::resource('menu', MenuManagementController::class);
+        Route::resource('staff', StaffManagementController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+    });
+
+    // STAFF - Konfirmasi Transaksi & Update Meja
+    Route::middleware('role:staff')->group(function () {
+        Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
+        Route::post('transactions/{order}/confirm', [TransactionController::class, 'confirm'])->name('transactions.confirm');
+
+        Route::get('tables', [TableStatusController::class, 'index'])->name('tables.index');
+        Route::patch('tables/{table}/clear', [TableStatusController::class, 'clear'])->name('tables.clear');
+    });
+});
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

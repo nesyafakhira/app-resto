@@ -32,6 +32,7 @@ class OrderItemController extends Controller
     public function store(Request $request, Table $table)
 {
     // Langsung gunakan $table
+    dd($request->all());
     $order = Order::create([
         'table_id' => $table->id,
         'order_name' => $request->order_name,
@@ -40,6 +41,7 @@ class OrderItemController extends Controller
         'status' => 'pending',
         'paid_amount' => 0,
     ]);
+
 
     $total = 0;
 
