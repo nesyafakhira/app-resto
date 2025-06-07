@@ -14,14 +14,14 @@ class AddMenuSeeder extends Seeder
     public function run(): void
     {
         Menu::create([
-            'name'  => 'Mie Ayam',
-            'price' => 15000,
+            'name'  => 'Classic Sirloin Steak',
+            'price' => 95000,
             'type'  => 'food',
         ]);
 
         Menu::create([
-            'name'  => 'Es Teh Manis',
-            'price' => 5000,
+            'name'  => 'Coffee Latte (hot/iced)',
+            'price' => 24000,
             'type'  => 'drink',
         ]);
     }
