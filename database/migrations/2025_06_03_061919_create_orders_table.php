@@ -17,7 +17,7 @@ return new class extends Migration
         $table->string('order_name');
         $table->decimal('total_amount', 10, 2)->default(0);
         $table->enum('payment_method', ['qris']);
-        $table->enum('status', ['pending', 'paid', 'coming', 'completed'])->default('pending');
+        $table->enum('status', ['pending', 'paid', 'completed'])->default('pending');
         $table->decimal('paid_amount', 10, 2)->nullable();
         $table->decimal('change', 10, 2)->nullable();
         $table->timestamps();

@@ -30,8 +30,7 @@
                         <form action="{{ route('dashboard.transactions.confirm', $order->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-sm btn-primary">
-                                @if ($order->status === 'paid') Mulai Masak
-                                @elseif ($order->status === 'cooking') Selesai Masak
+                                @if ($order->status === 'paid') Confirm
                                 @else -
                                 @endif
                             </button>

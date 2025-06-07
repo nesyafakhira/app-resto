@@ -64,7 +64,7 @@ Route::resource('menu', MenuController::class);
 Route::put('/order/{order}/paid', [OrderController::class, 'markAsPaid'])->name('order.markPaid');
 Route::resource('order', OrderController::class);
 
-Route::post('/order-item/{table}', [OrderItemController::class, 'store'])->name('order-item.store');
+Route::post('/order-item/{table:id}', [OrderItemController::class, 'store'])->name('order-item.store');
 Route::resource('order-item', OrderItemController::class);
 
 

@@ -16,8 +16,6 @@ class TransactionController extends Controller
     public function confirm(Order $order)
     {
         if ($order->status === 'paid') {
-            $order->update(['status' => 'coming']);
-        } elseif ($order->status === 'coming') {
             $order->update(['status' => 'completed']);
         }
 

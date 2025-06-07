@@ -32,9 +32,8 @@ class OrderItemController extends Controller
     public function store(Request $request, Table $table)
 {
     // Langsung gunakan $table
-    dd($request->all());
     $order = Order::create([
-        'table_id' => $table->id,
+        'table_id' => $request->table_id,
         'order_name' => $request->order_name,
         'total_amount' => 0, // dihitung nanti
         'payment_method' => 'qris',
@@ -59,9 +58,22 @@ class OrderItemController extends Controller
         }
     }
 
-    // Update total dan status meja
-    $order->update(['total_amount' => $total]);
+    // Ambil table_id dari request
+$tableId = $request->table_id;
+
+// Update total amount pada order
+$order->update(['total_amount' => $total]);
+
+// Cari meja berdasarkan id yang diambil dari input hidden
+$table = Table::find($tableId);
+
+// Jika meja ditemukan, update status is_full jadi 1
+if ($table) {
     $table->update(['is_full' => 1]);
+} else {
+    // Bisa tambahkan logika error handling jika meja tidak ditemukan
+}
+
 
     return redirect()->route('order.show', $order->id)->with('success', 'Pesanan berhasil dibuat');
 }

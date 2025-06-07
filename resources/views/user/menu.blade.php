@@ -15,6 +15,7 @@
 
             <label for="exampleInputEmail1" class="form-label">Nama Pemesan</label>
             <div class="form-floating mb-3 col-4">
+                <input name="table_id" type="hidden" class="form-control" id="floatingInput" placeholder="Masukkan Nama Anda" value="{{ $table->id }}" required>
                 <input name="order_name" type="text" class="form-control" id="floatingInput" placeholder="Masukkan Nama Anda" required>
                 <label for="floatingInput">Nama Anda</label>
             </div>

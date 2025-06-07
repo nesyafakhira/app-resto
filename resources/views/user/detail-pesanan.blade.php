@@ -18,6 +18,7 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h5>Meja: #{{ $order->table->number }}</h5>
+                <p>Nama: {{ ucfirst($order->order_name) }}</p>
                 <p>Status: <strong>{{ ucfirst($order->status) }}</strong></p>
                 <p>Metode Pembayaran: {{ strtoupper($order->payment_method) }}</p>
                 <p>Waktu Order: {{ $order->created_at->format('d M Y H:i') }}</p>
