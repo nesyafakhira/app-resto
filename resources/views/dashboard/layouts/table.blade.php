@@ -15,7 +15,7 @@
         </div>
         <div class="card-body p-0">
             <div class="table-responsive mt-4">
-                <table id="basic-table" class="table table-striped table-hover" role="grid">
+                <table id="datatable" class="table table-striped table-hover" role="grid">
                     <thead class="table-light">
                         <tr>
                             <th>Transaction ID</th>

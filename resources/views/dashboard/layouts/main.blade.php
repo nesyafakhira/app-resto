@@ -274,6 +274,14 @@
     <!-- app JavaScript -->
     <script src="{{ asset('template/logik/assets/js/app.js') }}"></script>
 
+    <script>
+        $(function() {
+            $("#datatable").DataTable({
+                dom: "Bfltp"
+            });
+        })
+    </script>
+
 
 </body>
 
