@@ -1,3 +1,6 @@
+@extends('dashboard.layouts.main')
+
+@section('content')
 <div class="col-md-12 col-lg-12">
     <div class="card overflow-hidden">
         <div class="card-header d-flex justify-content-between flex-wrap">
@@ -86,3 +89,5 @@
     </div>
 </div>
 </div>
+
+@endsection

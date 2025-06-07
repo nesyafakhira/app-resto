@@ -14,7 +14,7 @@
         <div class="container d-flex justify-content-center">
             <div class="card" style="width: 30rem; margin-top: 90px;">
                 <div class="card-body">
-                        <h5>Login | Codely</h5>
+                        <h5>Login | App Resto</h5>
 
                         <form action="{{ route('login') }}" method="post">
                         @csrf

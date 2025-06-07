@@ -236,7 +236,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="row">
-                        @include('dashboard.layouts.table')
+                        @yield('content')
                     </div>
                 </div>
             </div>

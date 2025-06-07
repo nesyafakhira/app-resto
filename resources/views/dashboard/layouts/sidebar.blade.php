@@ -1,6 +1,6 @@
 <aside class="sidebar sidebar-default navs-rounded">
     <div class="sidebar-header d-flex align-items-center justify-content-start">
-        <a href="../dashboard/index.html" class="navbar-brand">
+        <a href="{{ route('dashboard.index') }}" class="navbar-brand">
             <!--Logo start-->
             <svg width="88" class="iq-logo" viewBox="0 0 88 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 33.0964V2.00584L5 0V33.0964H0Z" fill="#FE9436" />
@@ -83,8 +83,9 @@
                         </i>
                     </a>
                     <ul class="sub-nav collapse" id="sidebar-user" data-bs-parent="#sidebar">
+                        @role('admin')
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/app/user-profile.html">
+                            <a class="nav-link " href="{{ route('dashboard.menu.create') }}">
                                 <i class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -93,11 +94,29 @@
                                     </svg>
                                 </i>
                                 <i class="sidenav-mini-icon"> U </i>
-                                <span class="item-name">User Profile</span>
+                                <span class="item-name">Tambah Menu</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/app/user-add.html">
+                            <a class="nav-link " href="{{ route('dashboard.staff.index') }}">
+                                <i class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
+                                        <g>
+                                            <circle cx="12" cy="12" r="8" fill="currentColor"></circle>
+                                        </g>
+                                    </svg>
+                                </i>
+                                <i class="sidenav-mini-icon"> U </i>
+                                <span class="item-name">Tambah Staff</span>
+                            </a>
+                        </li>
+
+                        @endrole
+
+
+                        @role('staff')
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{ route('dashboard.transactions.index') }}">
                                 <i class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -106,11 +125,11 @@
                                     </svg>
                                 </i>
                                 <i class="sidenav-mini-icon"> A </i>
-                                <span class="item-name">Add User</span>
+                                <span class="item-name">Transaksi</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/app/user-list.html">
+                            <a class="nav-link " href="{{ route('dashboard.tables.index') }}">
                                 <i class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -118,10 +137,12 @@
                                         </g>
                                     </svg>
                                 </i>
-                                <i class="sidenav-mini-icon"> U </i>
-                                <span class="item-name">User List</span>
+                                <i class="sidenav-mini-icon"> A </i>
+                                <span class="item-name">Update Status Meja</span>
                             </a>
                         </li>
+
+                        @endrole
                     </ul>
                 </li>
             </ul>
