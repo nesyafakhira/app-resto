@@ -219,7 +219,11 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="../dashboard/auth/sign-in.html">Logout</a></li>
+                                    <form action="{{ route('logout') }}" method="post">
+                                        @csrf
+                                        <li><button type="submit" class="dropdown-item">Logout</button></li>
+
+                                    </form>
                                 </ul>
                             </li>
                         </ul>
