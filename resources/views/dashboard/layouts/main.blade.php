@@ -203,8 +203,14 @@
                                 <a class="nav-link py-0 d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="../assets/images/avatars/01.png" alt="User-Profile" class="img-fluid avatar avatar-40 avatar-rounded">
                                     <div class="caption ms-3 d-none d-md-block ">
-                                        <h6 class="mb-0 caption-title">James Patterson</h6>
-                                        <p class="mb-0 caption-sub-title">Marketing Administrator</p>
+                                        <h6 class="mb-0 caption-title">{{ auth()->user()->name }}</h6>
+                                        @role('admin')
+                                        <p class="mb-0 caption-sub-title">Admin</p>
+                                        @endrole
+                                        
+                                        @role('staff')
+                                        <p class="mb-0 caption-sub-title">Staff</p>
+                                        @endrole
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

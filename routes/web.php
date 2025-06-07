@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
@@ -29,7 +30,10 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/', function () {
-        return view('dashboard.index');
+        $orders = Order::with('table')->where('status', 'paid')->orWhere('status', 'pending')->orWhere('status', 'completed')->latest()->get();
+
+        
+        return view('dashboard.index', compact('orders'));
     })->name('index');
 
     // ADMIN - CRUD Menu & Staff
