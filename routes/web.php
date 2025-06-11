@@ -32,12 +32,12 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
     Route::get('/', function () {
         $orders = Order::with('table')->where('status', 'paid')->orWhere('status', 'pending')->orWhere('status', 'completed')->latest()->get();
 
-        
+
         return view('dashboard.index', compact('orders'));
     })->name('index');
 
     // ADMIN - CRUD Menu & Staff
-    Route::middleware('role:admin')->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware('role:admin')->group(function () {
         Route::resource('menu', MenuManagementController::class);
         Route::resource('staff', StaffManagementController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
     });

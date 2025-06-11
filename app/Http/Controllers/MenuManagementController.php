@@ -33,7 +33,13 @@ class MenuManagementController extends Controller
             'name'  => 'required|string',
             'price' => 'required|numeric',
             'type'  => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('public/image_menu');
+        $data['image'] = str_replace('public/', '', $path);
+        }
 
         Menu::create($request->all());
 

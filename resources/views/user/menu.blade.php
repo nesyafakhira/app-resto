@@ -40,6 +40,7 @@
                             <td>{{ $menu->name }}</td>
                             <td>{{ $menu->price }}</td>
                             <td>{{ $menu->type }}</td>
+                            <td><img src="{{ asset('storage/. $menu->image') }}" width="200" alt=""></td>
                             <td>
                                 <div class="input-group">
                                     <button type="button" class="btn btn-sm btn-danger" onclick="updateQty({{ $menu->id }}, -1)">-</button>
